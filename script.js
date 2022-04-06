@@ -13,7 +13,10 @@ function setup() {
     //! Getting DOM objects (HTML elements)
     let grassCountElement = document.getElementById('grassCount');
     let grassEaterCountElement = document.getElementById('grassEaterCount');
-    let amenakerCounterElement = document.getElementById('bombCount');
+    let amenakerCountElement = document.getElementById('amenakerCount');
+    let bombCountElement = document.getElementById('bombCount');
+    let predatorCountElement = document.getElementById('predatorCount');
+
 
     //! adding socket listener on "data" <-- name, after that fire 'drawCreatures' function
 
@@ -24,7 +27,12 @@ function setup() {
         matrix = data.matrix;
         grassCountElement.innerText = data.grassCounter;
         grassEaterCountElement.innerText = data.grassEaterCounter;
-        amenakerCounterElement.innerHTML = data.amenakerCounter;
+        amenakerCountElement.innerHTML = data.amenakerCounter;
+        bombCountElement.innerHTML = data.bombCounter;
+        predatorCountElement.innerHTML = data.predatorCounter;
+
+        //add
+
         //! Every time it creates new Canvas woth new matrix size
         createCanvas(matrix[0].length * side, matrix.length * side)
         //! clearing background by setting it to new grey color
@@ -65,7 +73,7 @@ function setup() {
 
 socket.on("data", (data) => {
     matrix = data.matrix;
-})
+});
 
 function clicked() {
     socket.emit("restart");

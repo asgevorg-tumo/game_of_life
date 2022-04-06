@@ -160,11 +160,11 @@ function game() {
 //! Info/status to emit
 let sendData = {
   matrix: matrix,
-  grassCounter: grassArr.length,
-  amenakerCounter: AmenakerArr.length,
-  bombCounter: bombArr.length,
-  grassEaterCounter: grassEaterArr.length,
-  predatorCounter: predatorArr.length,
+  grassCounter: grassArr.length,//
+  amenakerCounter: AmenakerArr.length,//
+  bombCounter: 1,// always 1
+  grassEaterCounter: grassEaterArr.length,//
+  predatorCounter: predatorArr.length,//
 };
 //sends the data
 io.sockets.emit("data", sendData);

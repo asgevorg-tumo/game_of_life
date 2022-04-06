@@ -5,44 +5,31 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.scss">
-    <style>
-        canvas {
-            display: block;
-            margin: 0 auto;
-        }
-
-        div {
-            display: inline-block;
-        }
-
-        h1 {
-            padding: 20px;
-            text-align: center;
-        }
-
-        body {
-            background-color: white;
-            font-family: 'Noto Sans', sans-serif !important;
-        }
-    </style>
 </head>
 
 <body>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand">GA</a>
+        <button type="button" class="btn btn-warning" onclick="clicked()">Restart</button>
+
+        
+
+        <button type="button" class="btn" onclick="winter()">Winter</button>
+        <button type="button" class="btn" onclick="summer()">Summer</button>
+        <br>
+        <button type="button" class="btn btn-danger" onclick="kill()">Kill All</button>
+        <br>
+        <input type="text" placeholder="Type " id="inputId" value="20">
+        <button type="button" class="btn" type="button" onclick="getInputValue();">Get Value</button>
+        <br>
+        <br>
+        <button type="button" class="btn btn-success" onclick="addGrass()">grass</button>
+
+        <button type="button" class="btn" onclick="addPredator()">predator</button>
+        <button type="button" class="btn" onclick="addGrassEater()">Add Grass Eater(Random)</button>
+    </nav>
+    
     <table class="table table-hover">
-        <!-- <thead>
-            <tr>
-                <h1>Ծրագրավորում III Երևան</h1>
-            </tr>
-            <tr>
-                <h1>Անուն Ազգանուն</h1>
-            </tr>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Գույն</th>
-                <th scope="col">Նկարագրություն</th>
-                <th scope="col">Ծնվել է</th>
-            </tr>
-        </thead> -->
         <tbody>
             <tr>
                 <th scope="row">1</th>
@@ -62,33 +49,27 @@
                 <th scope="row">3</th>
                 <td scope="row" style="background-color:blue;"></td>
                 <td>Amenaker</td>
+                <td id="amenakerCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td scope="row" style="background-color:blue;"></td>
+                <td>Bomb</td>
                 <td id="bombCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td scope="row" style="background-color:blue;"></td>
+                <td>Predator</td>
+                <td id="predatorCount"></td>
             </tr>
         </tbody>
     </table>
-    <button onclick="clicked()">Restart</button>
-    <button onclick="winter()">Winter</button>
-
-    <button onclick="summer()">Summer</button>
-
-    <br>
-
-    <button onclick="kill()">Kill All</button>
-
-    <br>
-
-    <input type="text" placeholder="Type " id="inputId" value="20">
-    <button type="button" onclick="getInputValue();">Get Value</button>
-    <br>
-    <br> 
-    <button onclick="addGrass()">grass</button>
-    <button onclick="addPredator()">predator</button>
-
-    <button onclick="addGrassEater()">Add Grass Eater(Random)</button>
+    
+      
     <script src="p5.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="script.js"></script>
 </body>
 
 </html>
-
